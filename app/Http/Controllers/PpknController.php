@@ -42,6 +42,34 @@ class PpknController extends Controller
         return view('ppkn.show', ['ppkn' => $ppkn]);
     }
 
+    public function edit($id)
+    {
+        $ppkn = Ppkn::findOrFail($id);
+
+        return view('ppkn.edit', ['ppkn' => $ppkn]);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $validation = Validator::make($request->all(), [
+            "nilai_pengetahuan" => "required|min:0|max:100",
+            "deskripsi_pengetahuan" => "required",
+            "nilai_keterampilan" => "required|min:0|max:100",
+            "deskripsi_keterampilan" => "required",
+        ]);
+
+        $ppkn = Ppkn::findOrFail($id);
+
+        $ppkn->nilai_pengetahuan = $request->nilai_pengetahuan;
+        $ppkn->deskripsi_pengetahuan = $request->deskripsi_pengetahuan;
+        $ppkn->nilai_keterampilan = $request->nilai_keterampilan;
+        $ppkn->deskripsi_keterampilan = $request->deskripsi_keterampilan;
+
+        $ppkn->save();
+
+        return redirect()->route('ppkn.index');
+    }
+
     public function destroy($id)
     {
         $ppkn = Ppkn::findOrFail($id);

@@ -52,6 +52,8 @@ Route::group(["prefix" => "/data-nilai", "middleware" => "auth"], function () {
     route::get("/", "PpknController@index")->name("ppkn.index");
     route::post("/", "PpknController@import")->name("ppkn.import");
     route::get("/{id}", "PpknController@show")->name("ppkn.show");
+    route::get("/{id}/edit", "PpknController@edit")->name("ppkn.edit");
+    route::patch("/{id}/edit", "PpknController@update")->name("ppkn.update");
     route::delete("/{id}/delete", "PpknController@destroy")->name("ppkn.destroy");
   });
 });

@@ -15,7 +15,7 @@
   </div>
   <div class="main">
     <h1 class="heading-primary title heading">{{ $ppkn->student["nama"] }}</h1>
-    <a href="#" class="btn-edit">Edit</a>
+    <a href="{{ route('ppkn.edit', $ppkn->id) }}" class="btn-edit">Edit</a>
 
     <div class="content">
       <div class="left">
