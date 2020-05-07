@@ -16,12 +16,12 @@
       </div>
       <div class="main">
         <a href="{{ route('sikap.index') }}" class="menu-item">Data Sikap</a>
-        <a href="#" class="menu-item">Data Ekstrakurikuler</a>
-        <a href="#" class="menu-item">Data Saran</a>
+        <a href="{{ route('extra.index') }}" class="menu-item">Data Lainnya</a>
+        {{-- <a href="#" class="menu-item">Data Ekstrakurikuler</a>
         <a href="#" class="menu-item">Data Tinggi dan Berat Badan</a>
         <a href="#" class="menu-item">Data Kondisi Kesehatan</a>
         <a href="#" class="menu-item">Data Prestasi</a>
-        <a href="#" class="menu-item">Data Ketidakhadiran</a>
+        <a href="#" class="menu-item">Data Ketidakhadiran</a> --}}
       </div>
     </section>
 @endsection

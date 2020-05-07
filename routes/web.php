@@ -62,11 +62,21 @@ Route::group(["prefix" => "/data-nilai", "middleware" => "auth"], function () {
 Route::group(["prefix" => "/data-tambahan", "middleware" => "auth"], function () {
   route::view("/", "pages.tambahan")->name("tambahan");
 
+  // Data Sikap
   route::group(["prefix" => "/sikap"], function () {
     route::get("/", "SikapController@index")->name("sikap.index");
     route::post("/", "SikapController@import")->name("sikap.import");
     route::get("/{id}", "SikapController@edit")->name("sikap.edit");
     route::patch("/{id}", "SikapController@update")->name("sikap.update");
     route::delete("/{id}/delete", "SikapController@destroy")->name("sikap.destroy");
+  });
+
+  // Data Lainnya
+  route::group(["prefix" => "/lainnya"], function () {
+    route::get("/", "ExtraController@index")->name('extra.index');
+    route::post("/", "ExtraController@import")->name('extra.import');
+    route::get("/{id}", "ExtraController@edit")->name('extra.edit');
+    route::patch("/{id}", "ExtraController@update")->name('extra.update');
+    route::delete("/{id}/delete", "ExtraController@destroy")->name("extra.destroy");
   });
 });

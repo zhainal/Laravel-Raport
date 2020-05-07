@@ -19,4 +19,9 @@ class Student extends Model
     {
         return $this->hasOne('App\Sikap', 'nis', 'nis');
     }
+
+    public function extra()
+    {
+        return $this->hasOne('App\Extra', 'nis', 'nis');
+    }
 }
