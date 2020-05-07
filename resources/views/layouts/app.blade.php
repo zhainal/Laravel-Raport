@@ -37,7 +37,9 @@
         <a 
           href="{{ route('nilai') }}" 
           class="nav-item {{ Request::is('data-nilai*') ? 'active' : '' }}">Data Nilai</a>
-        <a href="#" class="nav-item">Data Tambahan</a>
+        <a 
+          href="{{ route('tambahan') }}" 
+          class="nav-item {{ Request::is('data-tambahan*') ? 'active' : '' }}">Data Tambahan</a>
         <a 
           href="{{ route('schools.index') }}" 
           class="nav-item {{ Request::is('sekolah*') ? 'active' : '' }}">Identitas Sekolah</a>
