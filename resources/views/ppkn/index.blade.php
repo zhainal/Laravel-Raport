@@ -91,7 +91,7 @@
                 <td scope="row">{{ $p->nilai_pengetahuan }}</td>
                 <td scope="row">{{ $p->nilai_keterampilan }}</td>
                 <td scope="row">
-                  <a href="#" class="btn-edit">Lihat</a>
+                  <a href="{{ route('ppkn.show', $p->id) }}" class="btn-edit">Lihat</a>
                   <a href="#" id="btn-delete" class="btn-delete">Hapus</a>
 
                   <div class="confirm">

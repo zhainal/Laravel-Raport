@@ -51,7 +51,7 @@ Route::group(["prefix" => "/data-nilai", "middleware" => "auth"], function () {
   route::group(["prefix" => "/ppkn"], function () {
     route::get("/", "PpknController@index")->name("ppkn.index");
     route::post("/", "PpknController@import")->name("ppkn.import");
+    route::get("/{id}", "PpknController@show")->name("ppkn.show");
     route::delete("/{id}/delete", "PpknController@destroy")->name("ppkn.destroy");
-    route::get("/test", "PpknController@test")->name("ppkn.test");
   });
 });

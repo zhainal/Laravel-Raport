@@ -35,6 +35,13 @@ class PpknController extends Controller
         return redirect()->route("ppkn.index")->with('success', 'Data Nilai berhasil ditambahkan');
     }
 
+    public function show($id)
+    {
+        $ppkn = Ppkn::findOrFail($id);
+
+        return view('ppkn.show', ['ppkn' => $ppkn]);
+    }
+
     public function destroy($id)
     {
         $ppkn = Ppkn::findOrFail($id);
