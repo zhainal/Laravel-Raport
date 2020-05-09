@@ -20,6 +20,36 @@ class Student extends Model
         return $this->hasOne('App\Bahasa', 'nis', 'nis');
     }
 
+    public function matematika()
+    {
+        return $this->hasOne('App\Matematika', 'nis', 'nis');
+    }
+
+    public function IPA()
+    {
+        return $this->hasOne('App\IPA', 'nis', 'nis');
+    }
+
+    public function IPS()
+    {
+        return $this->hasOne('App\IPS', 'nis', 'nis');
+    }
+
+    public function SBK()
+    {
+        return $this->hasOne('App\SBK', 'nis', 'nis');
+    }
+
+    public function penjas()
+    {
+        return $this->hasOne('App\Penjas', 'nis', 'nis');
+    }
+
+    public function PKLH()
+    {
+        return $this->hasOne('App\PKLH', 'nis', 'nis');
+    }
+
     public function sikap()
     {
         return $this->hasOne('App\Sikap', 'nis', 'nis');

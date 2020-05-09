@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePpknTable extends Migration
+class CreateIPSTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreatePpknTable extends Migration
      */
     public function up()
     {
-        Schema::create('ppkn', function (Blueprint $table) {
+        Schema::create('IPS', function (Blueprint $table) {
             $table->id();
             $table->string("nis")->unique();
             $table->double("nilai_pengetahuan");
@@ -33,6 +33,6 @@ class CreatePpknTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ppkn');
+        Schema::dropIfExists('_i_p_s');
     }
 }

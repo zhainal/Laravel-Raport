@@ -65,6 +65,60 @@ Route::group(["prefix" => "/data-nilai", "middleware" => "auth"], function () {
     Route::patch("/{id}/edit", "BahasaController@update")->name("bahasa.update");
     Route::delete("/{id}/delete", "BahasaController@destroy")->name("bahasa.destroy");
   });
+
+  Route::group(["prefix" => "/matematika"], function () {
+    Route::get("/", "MatematikaController@index")->name("matematika.index");
+    Route::post("/", "MatematikaController@import")->name("matematika.import");
+    Route::get("/{id}", "MatematikaController@show")->name("matematika.show");
+    Route::get("/{id}/edit", "MatematikaController@edit")->name("matematika.edit");
+    Route::patch("/{id}/edit", "MatematikaController@update")->name("matematika.update");
+    Route::delete("/{id}/delete", "MatematikaController@destroy")->name("matematika.destroy");
+  });
+
+  Route::group(["prefix" => "/IPA"], function () {
+    Route::get("/", "IPAController@index")->name("IPA.index");
+    Route::post("/", "IPAController@import")->name("IPA.import");
+    Route::get("/{id}", "IPAController@show")->name("IPA.show");
+    Route::get("/{id}/edit", "IPAController@edit")->name("IPA.edit");
+    Route::patch("/{id}/edit", "IPAController@update")->name("IPA.update");
+    Route::delete("/{id}/delete", "IPAController@destroy")->name("IPA.destroy");
+  });
+
+  Route::group(["prefix" => "/IPS"], function () {
+    Route::get("/", "IPSController@index")->name("IPS.index");
+    Route::post("/", "IPSController@import")->name("IPS.import");
+    Route::get("/{id}", "IPSController@show")->name("IPS.show");
+    Route::get("/{id}/edit", "IPSController@edit")->name("IPS.edit");
+    Route::patch("/{id}/edit", "IPSController@update")->name("IPS.update");
+    Route::delete("/{id}/delete", "IPSController@destroy")->name("IPS.destroy");
+  });
+
+  Route::group(["prefix" => "/SBK"], function () {
+    Route::get("/", "SBKController@index")->name("SBK.index");
+    Route::post("/", "SBKController@import")->name("SBK.import");
+    Route::get("/{id}", "SBKController@show")->name("SBK.show");
+    Route::get("/{id}/edit", "SBKController@edit")->name("SBK.edit");
+    Route::patch("/{id}/edit", "SBKController@update")->name("SBK.update");
+    Route::delete("/{id}/delete", "SBKController@destroy")->name("SBK.destroy");
+  });
+
+  Route::group(["prefix" => "/penjas"], function () {
+    Route::get("/", "PenjasController@index")->name("penjas.index");
+    Route::post("/", "PenjasController@import")->name("penjas.import");
+    Route::get("/{id}", "PenjasController@show")->name("penjas.show");
+    Route::get("/{id}/edit", "PenjasController@edit")->name("penjas.edit");
+    Route::patch("/{id}/edit", "PenjasController@update")->name("penjas.update");
+    Route::delete("/{id}/delete", "PenjasController@destroy")->name("penjas.destroy");
+  });
+
+  Route::group(["prefix" => "/PKLH"], function () {
+    Route::get("/", "PKLHController@index")->name("PKLH.index");
+    Route::post("/", "PKLHController@import")->name("PKLH.import");
+    Route::get("/{id}", "PKLHController@show")->name("PKLH.show");
+    Route::get("/{id}/edit", "PKLHController@edit")->name("PKLH.edit");
+    Route::patch("/{id}/edit", "PKLHController@update")->name("PKLH.update");
+    Route::delete("/{id}/delete", "PKLHController@destroy")->name("PKLH.destroy");
+  });
 });
 
 // Route Data Tambahan
