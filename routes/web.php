@@ -46,37 +46,46 @@ Route::group(["prefix" => "/data-siswa", "middleware" => "auth"], function () {
 
 // Route Data Nilai
 Route::group(["prefix" => "/data-nilai", "middleware" => "auth"], function () {
-  route::view("/", "pages.nilai")->name("nilai");
+  Route::view("/", "pages.nilai")->name("nilai");
 
-  route::group(["prefix" => "/ppkn"], function () {
-    route::get("/", "PpknController@index")->name("ppkn.index");
-    route::post("/", "PpknController@import")->name("ppkn.import");
-    route::get("/{id}", "PpknController@show")->name("ppkn.show");
-    route::get("/{id}/edit", "PpknController@edit")->name("ppkn.edit");
-    route::patch("/{id}/edit", "PpknController@update")->name("ppkn.update");
-    route::delete("/{id}/delete", "PpknController@destroy")->name("ppkn.destroy");
+  Route::group(["prefix" => "/ppkn"], function () {
+    Route::get("/", "PpknController@index")->name("ppkn.index");
+    Route::post("/", "PpknController@import")->name("ppkn.import");
+    Route::get("/{id}", "PpknController@show")->name("ppkn.show");
+    Route::get("/{id}/edit", "PpknController@edit")->name("ppkn.edit");
+    Route::patch("/{id}/edit", "PpknController@update")->name("ppkn.update");
+    Route::delete("/{id}/delete", "PpknController@destroy")->name("ppkn.destroy");
+  });
+
+  Route::group(["prefix" => "/bahasa"], function () {
+    Route::get("/", "BahasaController@index")->name("bahasa.index");
+    Route::post("/", "BahasaController@import")->name("bahasa.import");
+    Route::get("/{id}", "BahasaController@show")->name("bahasa.show");
+    Route::get("/{id}/edit", "BahasaController@edit")->name("bahasa.edit");
+    Route::patch("/{id}/edit", "BahasaController@update")->name("bahasa.update");
+    Route::delete("/{id}/delete", "BahasaController@destroy")->name("bahasa.destroy");
   });
 });
 
 // Route Data Tambahan
 Route::group(["prefix" => "/data-tambahan", "middleware" => "auth"], function () {
-  route::view("/", "pages.tambahan")->name("tambahan");
+  Route::view("/", "pages.tambahan")->name("tambahan");
 
   // Data Sikap
-  route::group(["prefix" => "/sikap"], function () {
-    route::get("/", "SikapController@index")->name("sikap.index");
-    route::post("/", "SikapController@import")->name("sikap.import");
-    route::get("/{id}", "SikapController@edit")->name("sikap.edit");
-    route::patch("/{id}", "SikapController@update")->name("sikap.update");
-    route::delete("/{id}/delete", "SikapController@destroy")->name("sikap.destroy");
+  Route::group(["prefix" => "/sikap"], function () {
+    Route::get("/", "SikapController@index")->name("sikap.index");
+    Route::post("/", "SikapController@import")->name("sikap.import");
+    Route::get("/{id}", "SikapController@edit")->name("sikap.edit");
+    Route::patch("/{id}", "SikapController@update")->name("sikap.update");
+    Route::delete("/{id}/delete", "SikapController@destroy")->name("sikap.destroy");
   });
 
   // Data Lainnya
-  route::group(["prefix" => "/lainnya"], function () {
-    route::get("/", "ExtraController@index")->name('extra.index');
-    route::post("/", "ExtraController@import")->name('extra.import');
-    route::get("/{id}", "ExtraController@edit")->name('extra.edit');
-    route::patch("/{id}", "ExtraController@update")->name('extra.update');
-    route::delete("/{id}/delete", "ExtraController@destroy")->name("extra.destroy");
+  Route::group(["prefix" => "/lainnya"], function () {
+    Route::get("/", "ExtraController@index")->name('extra.index');
+    Route::post("/", "ExtraController@import")->name('extra.import');
+    Route::get("/{id}", "ExtraController@edit")->name('extra.edit');
+    Route::patch("/{id}", "ExtraController@update")->name('extra.update');
+    Route::delete("/{id}/delete", "ExtraController@destroy")->name("extra.destroy");
   });
 });

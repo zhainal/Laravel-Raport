@@ -8,7 +8,6 @@ use Illuminate\Support\Facades\Validator;
 use Maatwebsite\Excel\Facades\Excel;
 use Maatwebsite\Excel\Validators\ValidationException;
 use App\Ppkn;
-use App\Student;
 
 class PpknController extends Controller
 {
@@ -76,13 +75,5 @@ class PpknController extends Controller
         $ppkn->delete();
 
         return redirect()->route('ppkn.index')->with('success', 'Data Nilai berhasil dihapus');
-    }
-
-    public function test()
-    {
-        $student = Student::findOrFail(1);
-        dd($student->ppkn());
-
-        return $student;
     }
 }

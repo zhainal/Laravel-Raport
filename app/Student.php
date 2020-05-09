@@ -15,6 +15,11 @@ class Student extends Model
         return $this->hasOne('App\Ppkn', 'nis', 'nis');
     }
 
+    public function bahasa()
+    {
+        return $this->hasOne('App\Bahasa', 'nis', 'nis');
+    }
+
     public function sikap()
     {
         return $this->hasOne('App\Sikap', 'nis', 'nis');

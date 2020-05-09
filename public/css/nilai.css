@@ -44,10 +44,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
 }
 
 .menu-item {
+    display: inline-block;
     font-size: 1rem;
     color: #fff;
     text-decoration: none;
@@ -59,7 +59,7 @@
 }
 
 .menu-item:first-child {
-    margin-top: 4rem;
+    margin-top: 8rem;
 }
 
 .menu-item:not(:last-child) {
