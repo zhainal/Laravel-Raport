@@ -264,12 +264,25 @@ button.close {
 }
 
 .btn-edit,
-.btn-delete {
+.btn-delete,
+.btn-cetak {
     padding: 0.5rem 1rem;
     text-decoration: none;
     color: #fff;
     border-radius: 4px;
     border: 1px solid transparent;
+}
+
+.btn-cetak {
+    background-color: orange;
+    margin-right: 0.5rem;
+    transition: all 0.3s;
+}
+
+.btn-cetak:hover {
+    background-color: #fff;
+    color: orange;
+    border: 1px solid orange;
 }
 
 .btn-edit {

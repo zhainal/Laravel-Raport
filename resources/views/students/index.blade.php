@@ -91,6 +91,7 @@
                 <td scope="row">{{ $student->nisn }}</td>
                 <td scope="row">{{ $student->kelas }}</td>
                 <td scope="row">
+                  <a href="{{ route('rapor', $student->id) }}" class="btn-cetak">Cetak Rapor</a>
                   <a href="{{ route('students.edit', $student->id) }}" class="btn-edit">Edit</a>
                   <a href="#" id="btn-delete" data-user={{$student->id}} class="btn-delete">Hapus</a>
                   

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Imports\StudentsImport;
 use App\Student;
+// use Barryvdh\DomPDF\Facade\PDF;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -92,5 +93,13 @@ class StudentsController extends Controller
         $student->delete();
 
         return redirect()->route('students.index')->with('success', 'Data berhasil dihapus');
+    }
+
+    public function rapor($id)
+    {
+        $student = Student::findOrFail($id);
+
+        $pdf = \PDF::loadview('rapor', ['student' => $student]);
+        return $pdf->download('Rapor_' . $student->nama);
     }
 }

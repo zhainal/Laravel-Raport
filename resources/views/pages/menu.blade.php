@@ -12,7 +12,7 @@
   <div class="menu-container">
     <div class="menu-box">
       <div class="rapor-box">
-        <a href="#" class="rapor-link">
+        <a href="{{ route('students.index') }}" class="rapor-link">
           Rapor 
             <svg class="rapor-svg">
               <use xlink:href="{{ asset('img/sprite.svg#icon-book') }}"></use>

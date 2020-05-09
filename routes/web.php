@@ -21,6 +21,9 @@ Auth::routes(['register' => false]);
 Route::get('/beranda', 'HomeController@index')->name('home');
 Route::view('/menu', 'pages.menu')->middleware('auth')->name('menu');
 
+// Cetak Rapor
+Route::get('/rapor/{id}', 'StudentsController@rapor')->middleware('auth')->name('rapor');
+
 // Route School
 Route::group(["prefix" => "/sekolah", "middleware" => "auth"], function () {
   Route::get("/", "SchoolController@index")->name("schools.index");
@@ -48,6 +51,7 @@ Route::group(["prefix" => "/data-siswa", "middleware" => "auth"], function () {
 Route::group(["prefix" => "/data-nilai", "middleware" => "auth"], function () {
   Route::view("/", "pages.nilai")->name("nilai");
 
+  // Nilai PPKn
   Route::group(["prefix" => "/ppkn"], function () {
     Route::get("/", "PpknController@index")->name("ppkn.index");
     Route::post("/", "PpknController@import")->name("ppkn.import");
@@ -57,6 +61,7 @@ Route::group(["prefix" => "/data-nilai", "middleware" => "auth"], function () {
     Route::delete("/{id}/delete", "PpknController@destroy")->name("ppkn.destroy");
   });
 
+  // Nilai Bahasa Indonesia
   Route::group(["prefix" => "/bahasa"], function () {
     Route::get("/", "BahasaController@index")->name("bahasa.index");
     Route::post("/", "BahasaController@import")->name("bahasa.import");
@@ -66,6 +71,7 @@ Route::group(["prefix" => "/data-nilai", "middleware" => "auth"], function () {
     Route::delete("/{id}/delete", "BahasaController@destroy")->name("bahasa.destroy");
   });
 
+  // Nilai Matematika
   Route::group(["prefix" => "/matematika"], function () {
     Route::get("/", "MatematikaController@index")->name("matematika.index");
     Route::post("/", "MatematikaController@import")->name("matematika.import");
@@ -75,6 +81,7 @@ Route::group(["prefix" => "/data-nilai", "middleware" => "auth"], function () {
     Route::delete("/{id}/delete", "MatematikaController@destroy")->name("matematika.destroy");
   });
 
+  // Nilai IPA
   Route::group(["prefix" => "/IPA"], function () {
     Route::get("/", "IPAController@index")->name("IPA.index");
     Route::post("/", "IPAController@import")->name("IPA.import");
@@ -84,6 +91,7 @@ Route::group(["prefix" => "/data-nilai", "middleware" => "auth"], function () {
     Route::delete("/{id}/delete", "IPAController@destroy")->name("IPA.destroy");
   });
 
+  // Nilai IPS
   Route::group(["prefix" => "/IPS"], function () {
     Route::get("/", "IPSController@index")->name("IPS.index");
     Route::post("/", "IPSController@import")->name("IPS.import");
@@ -93,6 +101,7 @@ Route::group(["prefix" => "/data-nilai", "middleware" => "auth"], function () {
     Route::delete("/{id}/delete", "IPSController@destroy")->name("IPS.destroy");
   });
 
+  // Nilai SBK
   Route::group(["prefix" => "/SBK"], function () {
     Route::get("/", "SBKController@index")->name("SBK.index");
     Route::post("/", "SBKController@import")->name("SBK.import");
@@ -102,6 +111,7 @@ Route::group(["prefix" => "/data-nilai", "middleware" => "auth"], function () {
     Route::delete("/{id}/delete", "SBKController@destroy")->name("SBK.destroy");
   });
 
+  // Nilai Penjas
   Route::group(["prefix" => "/penjas"], function () {
     Route::get("/", "PenjasController@index")->name("penjas.index");
     Route::post("/", "PenjasController@import")->name("penjas.import");
@@ -111,6 +121,7 @@ Route::group(["prefix" => "/data-nilai", "middleware" => "auth"], function () {
     Route::delete("/{id}/delete", "PenjasController@destroy")->name("penjas.destroy");
   });
 
+  // Nilai PKLH
   Route::group(["prefix" => "/PKLH"], function () {
     Route::get("/", "PKLHController@index")->name("PKLH.index");
     Route::post("/", "PKLHController@import")->name("PKLH.import");
