@@ -15,7 +15,7 @@
 @section('content')
     <section class="section-ppkn">
       <div class="sidebar">
-        <h1 class="heading-primary heading">Data Nilai PPKn</h1>
+        <h1 class="heading-primary heading">Data Nilai PKLH</h1>
         <p class="desc">Membuat, menyunting dan menghapus data nilai siswa</p>
       </div>
       <div class="main">
